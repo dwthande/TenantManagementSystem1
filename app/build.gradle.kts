@@ -1,5 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
+    // Switch Safe Args on for this app.
+    // It must come BELOW the android.application line
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -38,6 +41,11 @@ android {
 }
 
 dependencies {
+    // Navigation Component: NavHostFragment and NavController
+    implementation("androidx.navigation:navigation-fragment-ktx:2.9.8")
+    // NavigationUI: connects the App Bar and menus to navigation
+    implementation("androidx.navigation:navigation-ui-ktx:2.9.8")
+
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
